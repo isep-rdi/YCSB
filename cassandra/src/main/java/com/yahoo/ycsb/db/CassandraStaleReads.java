@@ -613,7 +613,7 @@ public class CassandraStaleReads extends DB
 
   public static void main(String[] args)
   {
-    CassandraClient10 cli = new CassandraClient10();
+    CassandraStaleReads cli = new CassandraStaleReads();
 
     Properties props = new Properties();
 

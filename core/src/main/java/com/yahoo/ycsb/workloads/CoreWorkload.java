@@ -149,7 +149,7 @@ public class CoreWorkload extends Workload
 	/**
 	 * The default value for the writeallfields property.
 	 */
-	public static final String WRITE_ALL_FIELDS_PROPERTY_DEFAULT="false";
+	public static final String WRITE_ALL_FIELDS_PROPERTY_DEFAULT="true";
 
 	boolean writeallfields;
 

@@ -74,16 +74,16 @@ public class CassandraStaleReads extends DB
   public static final String COLUMN_FAMILY_PROPERTY_DEFAULT = "data";
  
   public static final String READ_CONSISTENCY_LEVEL_PROPERTY = "cassandra.readconsistencylevel";
-  public static final String READ_CONSISTENCY_LEVEL_PROPERTY_DEFAULT = "ALL";
+  public static final String READ_CONSISTENCY_LEVEL_PROPERTY_DEFAULT = "ONE";
 
   public static final String WRITE_CONSISTENCY_LEVEL_PROPERTY = "cassandra.writeconsistencylevel";
-  public static final String WRITE_CONSISTENCY_LEVEL_PROPERTY_DEFAULT = "ALL";
+  public static final String WRITE_CONSISTENCY_LEVEL_PROPERTY_DEFAULT = "ONE";
 
   public static final String SCAN_CONSISTENCY_LEVEL_PROPERTY = "cassandra.scanconsistencylevel";
-  public static final String SCAN_CONSISTENCY_LEVEL_PROPERTY_DEFAULT = "ALL";
+  public static final String SCAN_CONSISTENCY_LEVEL_PROPERTY_DEFAULT = "ONE";
 
   public static final String DELETE_CONSISTENCY_LEVEL_PROPERTY = "cassandra.deleteconsistencylevel";
-  public static final String DELETE_CONSISTENCY_LEVEL_PROPERTY_DEFAULT = "ALL";
+  public static final String DELETE_CONSISTENCY_LEVEL_PROPERTY_DEFAULT = "ONE";
 
 
   TTransport tr;
@@ -100,10 +100,10 @@ public class CassandraStaleReads extends DB
 
   ColumnParent parent;
  
-  ConsistencyLevel readConsistencyLevel = ConsistencyLevel.ALL;
-  ConsistencyLevel writeConsistencyLevel = ConsistencyLevel.ALL;
-  ConsistencyLevel scanConsistencyLevel = ConsistencyLevel.ALL;
-  ConsistencyLevel deleteConsistencyLevel = ConsistencyLevel.ALL;
+  ConsistencyLevel readConsistencyLevel = ConsistencyLevel.ONE;
+  ConsistencyLevel writeConsistencyLevel = ConsistencyLevel.ONE;
+  ConsistencyLevel scanConsistencyLevel = ConsistencyLevel.ONE;
+  ConsistencyLevel deleteConsistencyLevel = ConsistencyLevel.ONE;
 
 
   /**
@@ -278,7 +278,7 @@ public class CassandraStaleReads extends DB
             if(timestamp != matchval)
                 nbError++;
             //System.out.println("############# Timestamp :"+timestamp);
-            System.out.println("@@@ get for colname :"+colname+" colTs : "+timestamp+" matchval :"+matchval+" Errorcount :"+nbError);    
+            //System.out.println("@@@ get for colname :"+colname+" colTs : "+timestamp+" matchval :"+matchval+" Errorcount :"+nbError);    
                 
           result.put(name,value);
 

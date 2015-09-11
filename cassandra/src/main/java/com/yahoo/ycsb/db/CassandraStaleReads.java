@@ -46,7 +46,7 @@ import org.apache.cassandra.thrift.*;
 /**
  * Cassandra 1.0.6 client for YCSB framework
  */
-public class CassandraClient10 extends DB
+public class CassandraClientStaleReads extends DB
 {
   static Random random = new Random();
   public static final int Ok = 0;
